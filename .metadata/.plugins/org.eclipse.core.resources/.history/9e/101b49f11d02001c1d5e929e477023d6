@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<h1>EPIC TASK</h1>
+	
+	<h2>Tarefas</h2>
+	
+	<p th:text="teste"/>
+	
+	<a href="/task/new">Nova Tarefa</a>
+</body>
+</html>

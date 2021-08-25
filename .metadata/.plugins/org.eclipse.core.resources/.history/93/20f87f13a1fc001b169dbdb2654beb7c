@@ -1,5 +1,0 @@
-package br.com.fiap.epictask.repository;
-
-public interface TaskRepository {
-
-}
