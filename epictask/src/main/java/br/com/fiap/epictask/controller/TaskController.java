@@ -17,7 +17,7 @@ import br.com.fiap.epictask.repository.TaskRepository;
 
 @Controller
 public class TaskController {
-
+	
 	@Autowired
 	private TaskRepository repository;
 	
@@ -32,17 +32,20 @@ public class TaskController {
 	}
 	
 	@RequestMapping("/task/new")
-	public String create() {//Método que mostra a tela de criação de tarefas
+	public String create(Task task) {//Método que mostra a tela de criação de tarefas
 		return "task-form";
 	}
 	
 	//@RequestMapping(value="/task", method=RequestMethod.POST)
-	@PostMapping("/task")
+	@PostMapping("/task") 
 	public String save(@Valid Task task, BindingResult result) {
 		if(result.hasErrors()) {
-			return "tasks-form";
+			return "task-form";
 		}
 		repository.save(task);
 		return "tasks";
 	}
+
+	
+
 }

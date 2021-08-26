@@ -12,10 +12,10 @@ import javax.validation.constraints.Size;
 import lombok.Data;
 
 @Data
-@Entity
+@Entity(name = "TB_TASKS")
 public class Task {
 
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long id;
 	
 	@NotBlank(message = "O título é obrigatório")
