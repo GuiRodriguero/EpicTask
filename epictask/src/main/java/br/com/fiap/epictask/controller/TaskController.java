@@ -27,6 +27,7 @@ public class TaskController {
 		//return "/tasks.html";
 		ModelAndView modelAndView = new ModelAndView("tasks");
 		List<Task> tasks = repository.findAll();
+		System.out.println(tasks);
 		modelAndView.addObject("tasks", tasks);
 		return modelAndView;
 	}
