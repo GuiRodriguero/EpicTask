@@ -3,5 +3,6 @@ org.springframework.ide.eclipse.boot.wizard.PopularityTracker.data-jpa=1
 org.springframework.ide.eclipse.boot.wizard.PopularityTracker.devtools=1
 org.springframework.ide.eclipse.boot.wizard.PopularityTracker.h2=1
 org.springframework.ide.eclipse.boot.wizard.PopularityTracker.lombok=1
+org.springframework.ide.eclipse.boot.wizard.PopularityTracker.security=3
 org.springframework.ide.eclipse.boot.wizard.PopularityTracker.thymeleaf=1
 org.springframework.ide.eclipse.boot.wizard.initializr.url=https\://start.spring.io\n

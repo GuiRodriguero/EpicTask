@@ -46,7 +46,4 @@ public class TaskController {
 		repository.save(task);
 		return "tasks";
 	}
-
-	
-
 }
