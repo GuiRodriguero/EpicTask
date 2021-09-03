@@ -1,32 +1,42 @@
 <!DOCTYPE html>
 <html xmlns:th="http://thymeleaf.org">
-<head>
+<head th:replace="~{base :: head}">
 	<meta charset="UTF-8">
 	<title>User Form</title>
 </head>
 <body>
 
-	<h1>Epic Task</h1>
-	
-	<h2>Novo Usuário</h2>
-	
-	<form action="/login" method="post" th:object="${user}">
-		<label for="name">Nome</label>
-		<input id="name" name="name" th:field="*{name}">
-		<span th:errors="*{name}"></span>
+<div class="container">
 
-		<label for="email">Email</label>
-		<input id="email" name="email" type ="email" th:field="*{email}">
-		<span th:errors="*{email}"></span>
-		
-		<label for="password">Senha</label>
-		<input name="password" id="password" type="password" th:field="*{password}">
-		<span th:errors="*{password}"></span>
-		
-		<a href="/login">Cancelar</a>
-		<button>Salvar</button>
-		
-	</form>
+	<div th:replace="~{base :: titulo('Cadastro de Usuário')}"></div>
+	
+	<div class="card mb-3">
+		<form action="/login" method="post" th:object="${user}" class="card-body">
+			<div class="form-group">
+				<label for="name">Nome</label>
+				<input id="name" name="name" th:field="*{name}">
+				<span th:errors="*{name}"></span>
+			</div>
+			
+			<div class="form-group">
+				<label for="email">Email</label>
+				<input id="email" name="email" type ="email" th:field="*{email}">
+				<span th:errors="*{email}"></span>
+			</div>
+			
+			<div class="form-group">
+				<label for="password">Senha</label>
+				<input name="password" id="password" type="password" th:field="*{password}">
+				<span th:errors="*{password}"></span>
+			</div>
+			
+			<a href="/login">Cancelar</a>
+			<button class="btn btn-primary">Salvar</button>
+			
+		</form>
+	</div>
+	
+</div>
 
 </body>
 </html>
