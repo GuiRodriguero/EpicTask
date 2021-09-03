@@ -10,19 +10,20 @@
 	
 	<h2>Tarefas</h2>
 
-	<a href="/task/new">Nova Tarefa</a>
-	 
-	<div class="card" th:each="task : ${tasks}">
-		<div class="card-body">
-			<div class="card-title alert-dark" th:text="${task.title}">Título da Tarefa:</div>
-						
-				
-				<div> <p class="card-text" th:text="${task.description}"/></div>
-							
-				<div> <p class="card-text" th:text="${task.points}" value="Pontuação da tarefa"/></div>
-							
-			</div>
+	<a class="btn btn-dark mb-3 mt-3" href="/task/new">Nova Tarefa</a>
+
+
+	<div class="card-columns" style="max-width: 60rem;">
+		<div class="card border-primary" th:each="task : ${tasks}">
+			  <div class="card-body">
+			    <h5 class="card-title" th:text="${task.title}"></h5>
+			    <div> <p class="card-text" th:text="${task.description}"/></div>
+			    <div> <p class="card-text"> <small class="text-muted" th:text="${task.points}"></small></p></div>
+			    <button class="btn btn-primary mt-2">Pegar</button>
+			  </div>
+		</div>	
 	</div>
+
 
 </body>
 </html>
