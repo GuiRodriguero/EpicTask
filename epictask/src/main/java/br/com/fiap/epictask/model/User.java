@@ -24,7 +24,7 @@ public class User {
 	@NotBlank(message = "O email é obrigatório")
 	private String email;
 	
-	@Size(min=6, message = "Deve ter pelo menos 6 caracteres")
+	@Size(min=8, message = "Deve ter pelo menos 8 caracteres")
 	private String password;
 	
 }
