@@ -6,6 +6,8 @@
 </head>
 <body>
 	
+	<!-- FORMULÁRIO -->
+	
 	<div class="container">
 		<div th:replace="~{base :: titulo('Login')}"></div>
 				
@@ -25,10 +27,16 @@
 					<button class="btn btn-primary">Entrar</button>			
 				</form>
 		</div>
-		
-		<!-- MOSTRAR TODOS OS USERS -->
-		
 	</div>
 	
+	<h2 class="text-center">Usuários Cadastrados</h2>
+	<!-- MOSTRAR TODOS OS USERS -->
+	<div class="card" th:each="user : ${users}">
+		<div class="card-body">
+			<div class="card-title alert-dark" th:text="${user.name}"></div>
+			<div> <p class="card-text" th:text="${user.email}"/></div>
+		</div>
+	</div>
+
 </body>
 </html>
