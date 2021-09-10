@@ -10,8 +10,6 @@
     <fullyQualifiedTypeName name="java.util.Optional"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.DeleteMapping"/>
     <fullyQualifiedTypeName name="org.springframework.data.web.PageableDefault"/>
-    <fullyQualifiedTypeName name="org.springframework.data.domain.Pageable"/>
-    <fullyQualifiedTypeName name="org.springframework.data.domain.Page"/>
     <fullyQualifiedTypeName name="org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter"/>
     <fullyQualifiedTypeName name="org.springframework.web.servlet.config.annotation.EnableWebMvc"/>
     <fullyQualifiedTypeName name="org.springframework.security.config.annotation.web.configuration.EnableWebSecurity"/>
@@ -45,7 +43,6 @@
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="br.com.fiap.epictask.controller.advice.ValidationFieldError"/>
     <fullyQualifiedTypeName name="org.springframework.cache.annotation.EnableCaching"/>
-    <fullyQualifiedTypeName name="org.springframework.cache.annotation.Cacheable"/>
     <fullyQualifiedTypeName name="org.springframework.cache.annotation.CacheEvict"/>
     <fullyQualifiedTypeName name="de.codecentric.boot.admin.server.config.EnableAdminServer"/>
     <fullyQualifiedTypeName name="org.springframework.context.annotation.Configuration"/>
@@ -60,4 +57,7 @@
     <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
     <fullyQualifiedTypeName name="br.com.fiap.epictask.repository.UserRepository"/>
     <fullyQualifiedTypeName name="springfox.documentation.swagger2.annotations.EnableSwagger2"/>
+    <fullyQualifiedTypeName name="org.springframework.data.domain.Pageable"/>
+    <fullyQualifiedTypeName name="org.springframework.data.domain.Page"/>
+    <fullyQualifiedTypeName name="org.springframework.cache.annotation.Cacheable"/>
 </qualifiedTypeNameHistroy>
