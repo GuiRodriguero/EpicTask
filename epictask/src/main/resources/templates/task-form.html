@@ -1,42 +1,54 @@
 <!DOCTYPE html>
 <html xmlns:th="http://thymeleaf.org">
-<head th:replace="~{base :: head}">
-	<meta charset="UTF-8">
-	<title>Tasks Form</title>
-</head>
+<head th:include="_template :: head"></head>
+
 <body>
 
-<div class="container">
-
-	<div th:replace="~{base :: titulo('Cadastro de Tarefas')}"></div>
+	<h1>Epic Task</h1>
 	
-	<div class="card mb-3">
-		<form action="/task" method="post" th:object="${task}" class="card-body">
-			<div class="form-group">
-				<label for="title">TÃ­tulo</label>
-				<input id="title" name="title" th:field="*{title}">
-				<span th:errors="*{title}"></span>							
+	<div class="card form">
+		<h2 th:text="#{button.newtask}">Nova Tarefa</h2>
+		
+		<form class="form-vertical" action="/task" method="post" th:object="${task}">
+			<label class="hide" for="title">Título</label>
+			<input 
+				th:classappend="${#fields.hasErrors('title')}?invalid"
+				type="text" 
+				id="title" 
+				name="title" 
+				th:field="*{title}" 
+				placeholder="título"
+			>
+			<span th:errors="*{title}"></span>
+			
+			<label class="hide" for="description">Descrição</label>
+			<textarea name="description" id="description" 
+						rows="" cols="" th:field="*{description}" placeholder="descrição"></textarea>
+			<span th:errors="*{description}"></span>
+			
+			<label for="points">Pontos</label>
+			<input 
+				name="points" 
+				id="points" 
+				type="range" 
+				th:field="*{points}"
+				min=10
+				max=500
+				step=10
+				oninput="document.querySelector('#output-points').value=this.value"
+				>
+			<output id="output-points">10</output>
+			<span th:errors="*{points}"></span>
+			
+			
+			<div class="action-buttons">
+				<a class="button" href="/task">Cancelar</a>
+				<button class="primary">Salvar</button>
 			</div>
-			
-			<div class="form-group">
-				<label for="description">DescriÃ§Ã£o</label>
-				<textarea name="description" id="description" 
-							rows="" cols="" th:field="*{description}"></textarea>
-				<span th:errors="*{description}"></span>
-			</div>
-			
-			<div class="form-group">
-				<label for="points">Pontos</label>
-				<input name="points" id="points" type="range" th:field="*{points}">
-				<span th:errors="*{points}"></span>
-			</div>
-			
-			<a href="/task">Cancelar</a>
-			<button class="btn btn-primary">Salvar</button>
-			
 		</form>
 	</div>
-</div>
 	
+	
+
 </body>
 </html>

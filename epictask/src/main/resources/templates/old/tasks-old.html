@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head th:replace="~{base :: head}">
+	<meta charset="UTF-8">
+	<title>Tasks</title>
+</head>
+<body>
+
+	<h1>EPIC TASK</h1>
+	
+	<h2>Tarefas</h2>
+
+	<!-- <a class="btn btn-dark mb-3 mt-3" href="/task/new">Nova Tarefa</a> -->
+
+	<div class="container">
+		<div class="card-columns" style="max-width: 60rem;">
+			<div class="card border-primary" th:each="task : ${tasks}">
+				  <div class="card-body">
+				    <h5 class="card-title" th:text="${task.title}"></h5>
+				    <div> <p class="card-text" th:text="${task.description}"/></div>
+				    <div> <p class="card-text"> <small class="text-muted" th:text="${task.points}"></small></p></div>
+				    <button class="btn btn-primary mt-2">Pegar</button>
+				  </div>
+			</div>	
+		</div>
+	</div>
+	
+</body>
+</html>

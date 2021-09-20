@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;900&display=swap');
+
+*{
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+body{
+	margin-left: 2rem;
+	background: #181B21;
+	font-family: Montserrat;
+	color: #FFF;
+}
+
+a{
+	text-decoration: none;
+	color: #FFF;
+}
+
+h1{
+	font-weight: 900;
+	font-size: 3rem;
+	color: #A650FF;
+	text-shadow: 0px 0px 15px #A650FF;
+}
+
+.card{
+	background: linear-gradient(145.91deg, #33393E 0%, #17191A 100%);
+	box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.5);
+	border-radius: 30px;
+	padding: 1rem;
+	margin: 2rem;
+}
+
+.card.form{
+	max-width: 450px;
+	margin: 3rem auto;
+}
+
+.card h2{
+	font-weight: 600;
+	font-size: 1.5rem;
+	text-align: center;
+	color: #FFFFFF;
+}
+
+button,
+.button{
+	background: #25282B;
+	box-shadow: -2px -2px 4px rgba(98, 97, 97, 0.25), 2px 2px 4px #161616;
+	border-radius: 7px;
+	font-family: Montserrat;
+	font-size: 1.2rem;
+	text-align: center;
+	color: #A0A0A0;
+	padding: .4rem 2rem;
+	cursor: pointer;
+}
+
+button.primary,
+.button.primary{
+	background: #A650FF;
+	box-shadow: 0px 0px 7px #A650FF;
+	color: #4D2478;
+}
+
+
+
+
+
+
+
+
+
+

@@ -20,7 +20,7 @@ public class ValidationControllerAdvice {
 	@ResponseStatus(code = HttpStatus.BAD_REQUEST)
 	public List<ValidationFieldError> handle(MethodArgumentNotValidException e) {
 		log.info("Erro de Validação");
-		
+
 		List<ValidationFieldError> list = new ArrayList<>();
 		
 		List<FieldError> errors = e.getBindingResult().getFieldErrors(); 
