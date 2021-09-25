@@ -1,9 +1,12 @@
 .form-vertical{
 	display: flex;	
 	flex-direction: column;
+	padding: 2rem;
 }
 
 .form-vertical input[type=text],
+.form-vertical input[type=email],
+.form-vertical input[type=password],
 .form-vertical textarea{
 	background: linear-gradient(90deg, #181A1B 0%, #252A2E 100%);
 	box-shadow: inset -4px -4px 4px rgba(68, 68, 68, 0.25), inset 4px 4px 4px rgba(0, 0, 0, 0.25);
@@ -15,10 +18,12 @@
 	height: 40px;
 	padding-left: 1rem; 
 	outline: none;
-	margin: .7rem 5rem;
+	margin: 1rem;
 }
 
 .form-vertical input[type=text]:focus,
+.form-vertical input[type=email]:focus,
+.form-vertical input[type=password]:focus,
 .form-vertical textarea:focus{
 	border: 1px solid #A650FF;
 }
@@ -35,17 +40,24 @@ label{
 	font-weight: 300;
 	font-size: 1.2rempx;
 	color: rgba(255, 255, 255, 0.3);
-	margin: .7rem 5rem;
+	margin: 1rem;
 }
 
-.form-vertical  input[type=range]{
-	margin: .7rem 5rem;
+.form-vertical input[type=range],
+.form-vertical output{
+	margin: 0 1rem ;
+}
+
+.form-vertical span{
+	color: #FF0066;
+	margin: 0 1rem ;
+	
 }
 
 .action-buttons{
 	display: flex;
 	justify-content: space-between;
-	margin: .7rem 5rem;
+	margin: 1rem;
 }
 
 .invalid{

@@ -1,0 +1,42 @@
+.card .tasks{
+	margin-top: 2rem;
+	display: flex;
+	justify-content: center;
+	align-items: stretch;
+	flex-wrap: wrap;
+}
+
+.card .task{
+	display:flex;
+	flex-direction:column;
+	justify-content: space-between;
+	margin: 1rem;
+	padding: 1rem;
+	max-width: 250px;
+	border-radius: 10px;
+
+}
+
+.card .task h3{
+	margin: 0;
+	font-weight: bold;
+	font-size: 20px;
+	line-height: 30px;
+}
+
+.card .task p{
+	margin: 1.5rem 0;
+}
+
+.card .task progress{
+	width: 100%;
+	margin-bottom: 2rem;
+	height: 5px;
+	
+}
+
+
+.card .task .task-actions {
+	display: flex;
+	justify-content: space-between;
+}

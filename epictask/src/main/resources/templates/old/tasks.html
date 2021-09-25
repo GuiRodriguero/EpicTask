@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head th:include="_template :: head"></head>
+<body>
+
+	<h1>EPIC TASK</h1>
+	
+	<span class="card" th:if="${message != null}" th:text="${message}"></span>
+	
+	<h2 th:text="#{title.task}"></h2>
+	
+	<nav th:include="_template :: menu"></nav>
+
+	<a class="button primary" href="/task/new" th:text="#{button.newtask}"></a>
+
+	 <ul th:each="task : ${tasks}">
+	 	<li>
+	 		<p th:text="${task.title}"></p>
+	 		<p th:text="${task.description}"></p>
+	 		<p th:text="${task.points}"></p>
+	 		<button>pegar</button>
+	 	</li>
+	 </ul>
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+
+</body>
+</html>

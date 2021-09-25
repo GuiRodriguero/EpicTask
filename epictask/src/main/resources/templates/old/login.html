@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="~{base :: head}">
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+<body>
+	
+	<!-- FORMULÁRIO -->
+	
+	<div class="container">
+		<div th:replace="~{base :: titulo('Login')}"></div>
+				
+			<div class="card mb-3">
+				<form action="/login" class="card-body" method="post">
+				<fieldset disabled>
+						<div class="form-group">
+							<label for="email">Email</label>
+							<input id="email" name="email">
+						</div>
+							
+						<div class="form-group">
+							<label for="password">Senha</label>
+							<input id="password" name="password" type="password">
+						</div>
+							
+						<a href="/login/new">Cadastrar-se</a>
+						<button class="btn btn-primary">Entrar</button>	
+					</fieldset>		
+				</form>
+		</div>
+	</div>
+	
+	<h2 class="text-center">Usuários Cadastrados</h2>
+	<!-- MOSTRAR TODOS OS USERS -->
+	<div class="card" th:each="user : ${users}">
+		<div class="card-body">
+			<div class="card-title alert-dark" th:text="${user.name}"></div>
+			<div> <p class="card-text" th:text="${user.email}"/></div>
+		</div>
+	</div>
+
+</body>
+</html>

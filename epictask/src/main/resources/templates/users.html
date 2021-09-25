@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+
+<head th:include="_template :: head"></head>
+
+<body>
+
+	<h1>EPIC TASK</h1>
+
+	<div class="alert" th:if="${message != null}" th:text="${message}"></div>
+
+	<div class="card">
+		<nav th:include="_template :: menu('user')"></nav>
+
+		<a href="/user/new" class="button primary action"> <span
+			class="material-icons"> add_circle_outline </span> <span
+			th:text="#{button.newuser}"></span>
+		</a>
+		
+		<main class="content">
+			<div class="user" th:each="user : ${users}">
+				<img class="avatar" 
+					th:alt="${'avatar do ' + user.name}" 
+					th:src="${user.avatarUrl}">
+				<div class="user-info">
+					<h4 th:text="${user.name}"></h4>
+					<p th:text="${user.email}"></p>
+				</div>
+				<div class="user-action">
+					<a th:href="${'/user/' + user.id }"> <span
+						class="material-icons yellow">create</span>
+					</a> <a th:href="${'/user/delete/' + user.id }"> <span
+						class="material-icons red">delete</span>
+					</a>
+				</div>
+			</div>
+		</main>
+
+
+
+	</div>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

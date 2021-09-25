@@ -5,25 +5,50 @@
 
 	<h1>EPIC TASK</h1>
 	
-	<span class="card" th:if="${message != null}" th:text="${message}"></span>
+	<div class="alert" th:if="${message != null}" th:text="${message}"></div>
 	
-	<h2 th:text="#{title.task}"></h2>
-	
-	<nav th:include="_template :: menu"></nav>
+	<div class="card">
+		<nav th:include="_template :: menu('task')"></nav>
+		<a href="/task/new" class="button primary action">
+			<span class="material-icons">
+				add_circle_outline
+			</span>
+			<span th:text="#{button.newtask}"></span>
+		</a>
+		
+		<div class="tasks">
+			<div class="card task" th:each="task : ${tasks}">
+				<div>
+					<h3 th:text="${task.title}"></h3>
+					<span th:text="${task.points}+'pts'"></span>
+				</div>
+				<p th:text="${task.description}"></p>
+				
+				<div class="status">
+					<svg>
+						<circle cx="70" cy="70" r="70"></circle>
+						<circle cx="70" cy="70" r="70" th:style="${'stroke-dashoffset:' + (440 - (440 * task.status )/100 )} "></circle>
+					</svg>
+					<div class="number">
+						<h2 th:text="${task.status + '%'}"></h2>
+					</div>
+				</div>
+				
+				<div class="task-actions">
+					<img class="avatar" alt="ower" src="https://avatars.githubusercontent.com/u/5585727?v=4">
+					<button class="icon primary" th:title="#{task.catch}">
+						<span class="material-icons">
+							back_hand
+						</span>
+					</button>
+				</div>
+			</div>
+		
+		</div>
 
-	<a class="button primary" href="/task/new" th:text="#{button.newtask}"></a>
+	</div>
 
-	 <ul th:each="task : ${tasks}">
-	 	<li>
-	 		<p th:text="${task.title}"></p>
-	 		<p th:text="${task.description}"></p>
-	 		<p th:text="${task.points}"></p>
-	 		<button>pegar</button>
-	 	</li>
-	 </ul>
-	 
-	 
-	 
+
 	 
 	 
 	 

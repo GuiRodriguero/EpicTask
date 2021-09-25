@@ -22,20 +22,12 @@
 			<span th:errors="*{title}"></span>
 			
 			<label class="hide" for="description">Descrição</label>
-			<textarea 
-				name="description" 
-				id="description" 
-				rows="" 
-				cols="" 
-				th:field="*{description}" 
-				placeholder="descrição"
-				th:classappend="${#fields.hasErrors('description')}?invalid"
-				></textarea>
+			<textarea name="description" id="description" 
+						rows="" cols="" th:field="*{description}" placeholder="descrição"></textarea>
 			<span th:errors="*{description}"></span>
 			
 			<label for="points">Pontos</label>
 			<input 
-			
 				name="points" 
 				id="points" 
 				type="range" 

@@ -1,0 +1,34 @@
+.content{
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 20px;
+	padding-bottom: 3rem;
+	
+}
+
+.user{
+	width: 80%;
+	max-width: 900px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-bottom: solid 1px rgba(255,255,255,0.3);
+	margin: 0 1rem;
+}
+
+.user-info{
+	flex-grow:1;
+	padding: 1rem 0;
+	margin-left: 1rem;
+}
+
+.user-info h4{
+	margin: 0;
+}
+
+.user-info p{
+	font-weight: 100;
+	margin: 0;
+}
