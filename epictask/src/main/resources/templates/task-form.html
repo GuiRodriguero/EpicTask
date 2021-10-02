@@ -10,25 +10,25 @@
 		<h2 th:text="#{button.newtask}">Nova Tarefa</h2>
 		
 		<form class="form-vertical" action="/task" method="post" th:object="${task}">
-			<label class="hide" for="title">Título</label>
+			<label class="hide" for="title">TÃ­tulo</label>
 			<input 
 				th:classappend="${#fields.hasErrors('title')}?invalid"
 				type="text" 
 				id="title" 
 				name="title" 
 				th:field="*{title}" 
-				placeholder="título"
+				placeholder="tï¿½tulo"
 			>
 			<span th:errors="*{title}"></span>
 			
-			<label class="hide" for="description">Descrição</label>
+			<label class="hide" for="description">DescriÃ§Ã£o</label>
 			<textarea 
 				name="description" 
 				id="description" 
 				rows="" 
 				cols="" 
 				th:field="*{description}" 
-				placeholder="descrição"
+				placeholder="descriï¿½ï¿½o"
 				th:classappend="${#fields.hasErrors('description')}?invalid"
 				></textarea>
 			<span th:errors="*{description}"></span>
