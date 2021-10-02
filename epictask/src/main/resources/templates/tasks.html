@@ -3,7 +3,8 @@
 <head th:include="_template :: head"></head>
 <body>
 
-	<h1>EPIC TASK</h1>
+	<header th:include="_template :: header"></header>
+	
 	
 	<div class="alert" th:if="${message != null}" th:text="${message}"></div>
 	
@@ -35,12 +36,29 @@
 				</div>
 				
 				<div class="task-actions">
-					<img class="avatar" alt="ower" src="https://avatars.githubusercontent.com/u/5585727?v=4">
-					<button class="icon primary" th:title="#{task.catch}">
+					
+					<span>
+						<img 
+							th:if="${task.user != null}"
+							class="avatar" 
+							alt="ower" 
+							th:src="${task.user.avatarUrl}"
+						>
+					</span>
+					
+					<a th:if="${task.user == null}" th:href="${'/task/hold/' + task.id}" class="button icon primary" th:title="#{task.catch}">
 						<span class="material-icons">
 							back_hand
 						</span>
-					</button>
+					</a>
+					
+					<a th:if="${task.user == #authentication.getPrincipal()}" th:href="${'/task/release/' + task.id}" class="button icon primary" th:title="#{task.catch}">
+						<span class="material-icons">
+							waving_hand
+						</span>
+					</a>
+					
+					
 				</div>
 			</div>
 		

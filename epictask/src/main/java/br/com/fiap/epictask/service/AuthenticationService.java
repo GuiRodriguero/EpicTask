@@ -14,8 +14,8 @@ import br.com.fiap.epictask.model.User;
 import br.com.fiap.epictask.repository.UserRepository;
 
 @Service
-public class AuthenticationService implements UserDetailsService{
-
+public class AuthenticationService implements UserDetailsService {
+	
 	@Autowired
 	private UserRepository repository;
 

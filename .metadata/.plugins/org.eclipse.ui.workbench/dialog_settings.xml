@@ -31,12 +31,14 @@
 		<item key="org.eclipse.ui.internal.quickaccess.QuickAccessDialogDIALOG_USE_PERSISTED_SIZE" value="true"/>
 		<item key="org.eclipse.ui.internal.quickaccess.QuickAccessDialogDIALOG_USE_PERSISTED_LOCATION" value="false"/>
 		<list key="orderedElements">
+			<item value="org.eclipse.jdt.ui.edit.text.java.add.unimplemented.constructors"/>
 			<item value="org.eclipse.jdt.ui.edit.text.java.generate.hashcode.equals"/>
 			<item value="org.eclipse.jdt.ui.edit.text.java.generate.constructor.using.fields"/>
 			<item value="org.eclipse.jdt.ui.actions.GenerateToString"/>
 			<item value="org.eclipse.jdt.ui.edit.text.java.create.getter.setter"/>
 		</list>
 		<list key="orderedProviders">
+			<item value="org.eclipse.ui.commands"/>
 			<item value="org.eclipse.ui.commands"/>
 			<item value="org.eclipse.ui.commands"/>
 			<item value="org.eclipse.ui.actions"/>
@@ -47,8 +49,10 @@
 			<item value="1"/>
 			<item value="1"/>
 			<item value="1"/>
+			<item value="1"/>
 		</list>
 		<list key="textArray">
+			<item value="gcfs"/>
 			<item value="hash"/>
 			<item value="constr"/>
 			<item value="tostr"/>

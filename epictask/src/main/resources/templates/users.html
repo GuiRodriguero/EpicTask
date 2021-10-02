@@ -5,7 +5,8 @@
 
 <body>
 
-	<h1>EPIC TASK</h1>
+	<header th:include="_template :: header"></header>
+	
 
 	<div class="alert" th:if="${message != null}" th:text="${message}"></div>
 

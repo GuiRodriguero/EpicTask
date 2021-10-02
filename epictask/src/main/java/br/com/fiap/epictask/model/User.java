@@ -3,9 +3,11 @@ package br.com.fiap.epictask.model;
 import java.util.Collection;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -38,6 +40,9 @@ public class User implements UserDetails{
 	
 	@NotBlank(message = "{user.github.blank}")
 	private String githubuser;
+
+	@ManyToMany(fetch = FetchType.EAGER)
+	private Collection<Role> roles;
 	
 	public String getAvatarUrl() {
 		return "https://avatars.githubusercontent.com/" + this.githubuser;
@@ -45,7 +50,7 @@ public class User implements UserDetails{
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		return null;
+		return this.roles;
 	}
 
 	@Override

@@ -1,25 +1,30 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<meta charset="UTF-8">
-	<title>Insert title here</title>
-</head>
+<html xmlns:th="http://thymeleaf.org">
+
+<head th:include="_template :: head"></head>
 <body>
 
 	<h1>Epic Task</h1>
 	
-	<h2>Login</h2>
-	
-	<form action="">
-		<label for="email">Email</label>
-		<input id="email" name="email">
+	<span th:if="${param.error}" class="alert error">Login inválido</span>
+
+	<section class="card form">
+
 		
-		<label for="password">Senha</label>
-		<input id="password" name="password" type="password">
+		<h2>Login</h2>
 		
-		<button>Entrar</button>
+		<form class="form-vertical" th:action="@{/login}" method="post" >
+			<label class="hide" for="email">Email</label>
+			<input type="email" id="email" name="username" placeholder="e-mail">
+			
+			<label class="hide"  for="password">Senha</label>
+			<input id="password" name="password" type="password" placeholder="senha">
+			
+			<button class="primary">Entrar</button>
+			
+		</form>
 		
-	</form>
+	</section>
 
 </body>
 </html>

@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<html xmlns:th="http://thymeleaf.org">
+<html 
+	xmlns:th="http://thymeleaf.org"
+	xmlns:sec="http://thymeleaf.org/thymeleaf-extras-springsecurity5"
+>
 
 <head th:fragment="head">
 	<meta charset="UTF-8">
@@ -11,9 +14,22 @@
 	<link rel="stylesheet" type="text/css" th:href="@{~/css/users.css}">
 	<link rel="stylesheet" type="text/css" th:href="@{~/css/range.css}">
 	<link rel="stylesheet" type="text/css" th:href="@{~/css/status.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{~/css/home.css}">
 </head>
 
 <body>
+
+<header th:fragment="header">
+	<h1><a href="/">Epic Task</a></h1>
+	
+	<div class="login-info">
+		<span th:text="${#authentication.getPrincipal().getName()}"></span>
+		<img class="avatar" alt="" th:src="${#authentication.getPrincipal().getAvatarUrl()}">
+		<a href="/logout" title="sair">
+			<span class="material-icons">logout</span>
+		</a>
+	</div>
+</header>
 
 <nav th:fragment="menu(page)">
 	<ul class="menu">
@@ -25,7 +41,7 @@
 				<span th:text="#{menu.task}"></span>
 			</a>
 		</li>
-		<li>
+		<li sec:authorize="hasRole('ROLE_ADMIN')">
 			<a href="/user" th:classappend="${page=='user'}?active">
 				<span class="material-icons">
 					perm_identity

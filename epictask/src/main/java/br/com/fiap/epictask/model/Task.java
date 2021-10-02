@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
@@ -33,4 +34,7 @@ public class Task {
 	@Min(value=0, message = "{task.status.min}")
 	@Max(value=10, message = "{task.status.max}")
 	private int status;
+	
+	@ManyToOne
+	private User user;
 }
