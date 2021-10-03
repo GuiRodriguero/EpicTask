@@ -5,8 +5,9 @@
 
 <body>
 
-	<header th:include="_template :: header"></header>
-	
+	<header>
+		<h1><a href="/">Epic Task</a></h1>
+	</header>
 	
 	<section class="card form">
 		<h2>Cadastrar Usuário</h2>
@@ -24,12 +25,12 @@
 			/>
 			<span class="error" th:errors="*{name}"></span>
 
-			<label for="githubuser" class="hide">Usu�rio do GitHub</label>
+			<label for="githubuser" class="hide">Usuário do GitHub</label>
 			<input 
 				type="text" 
 				name="githubuser" 
 				id="githubuser" 
-				placeholder="usuario do github"
+				placeholder="usuário do github"
 				th:field="*{githubuser}"
 				th:classappend="${#fields.hasErrors('githubuser')}?invalid"	
 				autocomplete="off"		 

@@ -23,6 +23,7 @@ import br.com.fiap.epictask.exception.TaskNotFoundException;
 import br.com.fiap.epictask.model.Task;
 import br.com.fiap.epictask.model.User;
 import br.com.fiap.epictask.repository.TaskRepository;
+import br.com.fiap.epictask.service.TaskService;
 import lombok.extern.slf4j.Slf4j;
 
 @Controller
@@ -34,21 +35,24 @@ public class TaskController {
 	
 	@Autowired
 	private TaskRepository repository;
+	
+	@Autowired
+	private TaskService service;
 
 	//@RequestMapping(value="/task", method=RequestMethod.GET)	
 	@GetMapping
 	public ModelAndView index() {//Método que mostra a tela das tarefas
 		//return "/tasks.html";	
 		ModelAndView modelAndView = new ModelAndView("tasks");
-		List<Task> tasks = repository.findAll();
+		List<Task> tasks = service.findAll();
 		//System.out.println(tasks);
 		modelAndView.addObject("tasks", tasks);
 		return modelAndView;
 	}
 	
 	@RequestMapping("new")
-	public String create(Task task) {//Método que mostra a tela de criação de tarefas
-		return "task-form";
+	public String create(Task task) {
+		return service.create();
 	}
 	
 	//@RequestMapping(value="/task", method=RequestMethod.POST)
