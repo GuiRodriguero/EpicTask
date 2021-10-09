@@ -24,7 +24,6 @@ import br.com.fiap.epictask.model.Task;
 import br.com.fiap.epictask.model.User;
 import br.com.fiap.epictask.repository.TaskRepository;
 import br.com.fiap.epictask.service.TaskService;
-import lombok.extern.slf4j.Slf4j;
 
 @Controller
 @RequestMapping("/task")
