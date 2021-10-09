@@ -1,6 +1,7 @@
 package br.com.fiap.epictask.model;
 
 import java.util.Collection;
+import java.util.Objects;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -9,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -20,6 +22,7 @@ import lombok.Data;
 
 @Data
 @Entity(name = "TB_USER")
+@Table(name = "TB_USER")
 @SequenceGenerator(name="user", sequenceName = "SQ_TB_USER", allocationSize = 1)
 public class User implements UserDetails{
 
@@ -76,5 +79,22 @@ public class User implements UserDetails{
 	@Override
 	public boolean isEnabled() {
 		return true;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		User other = (User) obj;
+		return Objects.equals(id, other.id);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id);
 	}
 }

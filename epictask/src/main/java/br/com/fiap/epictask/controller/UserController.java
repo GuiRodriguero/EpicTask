@@ -45,15 +45,17 @@ public class UserController {
 	
 	@PostMapping
 	public String save(@Valid User user, BindingResult result, RedirectAttributes redirect) {
+		System.out.println("Oi");
 		if(result.hasErrors()) return "user-form";
 		user.setPassword(
 					AuthenticationService
 					.getPasswordEncoder()
 					.encode(user.getPassword())
 		);
+		System.out.println(user);
 		repository.save(user);
 		redirect.addFlashAttribute("message", messages.getMessage("newuser.success", null, LocaleContextHolder.getLocale()));
-		return "redirect:user";
+		return "home";
 	}
 
 }

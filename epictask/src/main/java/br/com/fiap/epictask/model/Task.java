@@ -6,6 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
@@ -15,6 +16,7 @@ import lombok.Data;
 
 @Data
 @Entity(name = "TB_TASKS")
+@Table(name = "TB_TASKS")
 @SequenceGenerator(name="task", sequenceName = "SQ_TB_TASK", allocationSize = 1)
 public class Task {
 
