@@ -9,7 +9,9 @@ import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -45,7 +47,6 @@ public class UserController {
 	
 	@PostMapping
 	public String save(@Valid User user, BindingResult result, RedirectAttributes redirect) {
-		System.out.println("Oi");
 		if(result.hasErrors()) return "user-form";
 		user.setPassword(
 					AuthenticationService
@@ -58,4 +59,9 @@ public class UserController {
 		return "home";
 	}
 
+	@RequestMapping("/delete/{id}")
+	public String delete(@PathVariable Long id) {
+		repository.deleteById(id);
+		return "redirect:/users";
+	}
 }

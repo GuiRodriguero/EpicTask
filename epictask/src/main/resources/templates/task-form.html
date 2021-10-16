@@ -9,7 +9,7 @@
 	<div class="card form">
 		<h2 th:text="#{button.newtask}">Nova Tarefa</h2>
 		
-		<form class="form-vertical" action="/task" method="post" th:object="${task}">
+		<form class="form-vertical" th:action="@{/task}" method="post" th:object="${task}">
 			<label class="hide" for="title">Título</label>
 			<input 
 				th:classappend="${#fields.hasErrors('title')}?invalid"
@@ -17,7 +17,7 @@
 				id="title" 
 				name="title" 
 				th:field="*{title}" 
-				placeholder="t�tulo"
+				placeholder="título"
 			>
 			<span th:errors="*{title}"></span>
 			
@@ -28,7 +28,7 @@
 				rows="" 
 				cols="" 
 				th:field="*{description}" 
-				placeholder="descri��o"
+				placeholder="descrição"
 				th:classappend="${#fields.hasErrors('description')}?invalid"
 				></textarea>
 			<span th:errors="*{description}"></span>
