@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://thymeleaf.org">
-
 <head th:include="_template :: head"></head>
-
 <body>
 
 	<header th:include="_template :: header"></header>
@@ -12,7 +10,6 @@
 
 	<div class="card">
 		<nav th:include="_template :: menu('user')"></nav>
-
 		<a href="/user/new" class="button primary action"> <span
 			class="material-icons"> add_circle_outline </span> <span
 			th:text="#{button.newuser}"></span>

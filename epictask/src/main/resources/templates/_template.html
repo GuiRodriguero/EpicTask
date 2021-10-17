@@ -61,5 +61,62 @@
 	</ul>
 </nav>
 
+<form th:fragment="user">
+	<label for="name" class="hide">Nome</label>
+	<input
+			type="text"
+			name="name"
+			id="name"
+			placeholder="nome"
+			th:field="*{name}"
+			th:classappend="${#fields.hasErrors('name')}?invalid"
+			autocomplete="off"
+	/>
+	<span class="error" th:errors="*{name}"></span>
+
+	<label for="githubuser" class="hide">Usuário do GitHub</label>
+	<input
+			type="text"
+			name="githubuser"
+			id="githubuser"
+			placeholder="usuário do github"
+			th:field="*{githubuser}"
+			th:classappend="${#fields.hasErrors('githubuser')}?invalid"
+			autocomplete="off"
+	/>
+	<span class="error" th:errors="*{githubuser}"></span>
+
+
+	<label for="email" class="hide">E-mail</label>
+	<input
+			type="email"
+			name="email"
+			placeholder="e-mail"
+			id="email"
+			th:field="*{email}"
+			th:classappend="${#fields.hasErrors('email')}?invalid"
+			autocomplete="off"
+	/>
+	<span class="error"  th:errors="*{email}"></span>
+
+	<label for="password" class="hide">Senha</label>
+	<input
+			type="password"
+			name="password"
+			placeholder="senha"
+			id="password"
+			th:field="*{password}"
+			th:classappend="${#fields.hasErrors('password')}?invalid"
+	/>
+	<span class="error"  th:errors="*{password}"></span>
+
+	<div class="action-buttons">
+		<a href="/" class="button">Cancelar</a>
+		<button class="button primary">Salvar</button>
+	</div>
+
+</form>
+
+
 </body>
 </html>
