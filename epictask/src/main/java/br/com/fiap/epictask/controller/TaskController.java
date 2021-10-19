@@ -28,12 +28,7 @@ public class TaskController {
 	//@RequestMapping(value="/task", method=RequestMethod.GET)	
 	@GetMapping
 	public ModelAndView index() {//Método que mostra a tela das tarefas
-		//return "/tasks.html";	
-		ModelAndView modelAndView = new ModelAndView("tasks");
-		List<Task> tasks = service.findAll();
-		//System.out.println(tasks);
-		modelAndView.addObject("tasks", tasks);
-		return modelAndView;
+		return service.index();
 	}
 	
 	@RequestMapping("new")

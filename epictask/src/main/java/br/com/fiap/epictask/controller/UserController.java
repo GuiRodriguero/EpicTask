@@ -1,7 +1,5 @@
 package br.com.fiap.epictask.controller;
 
-import java.util.List;
-
 import javax.validation.Valid;
 
 import br.com.fiap.epictask.service.UserService;
@@ -26,11 +24,7 @@ public class UserController {
 
 	@GetMapping
 	public ModelAndView index() {
-		ModelAndView modelAndView = new ModelAndView("users");
-		List<User> users = service.findAll();
-		modelAndView.addObject("users", users);
-		System.out.println(users);
-		return modelAndView;
+		return service.index();
 	}
 	
 	@RequestMapping("new")

@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 import br.com.fiap.epictask.model.Task;
 import br.com.fiap.epictask.repository.TaskRepository;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
@@ -27,6 +28,15 @@ public class TaskService {
 
 	@Autowired
 	private MessageSource message;
+
+	public ModelAndView index() {
+		//return "/tasks.html";
+		ModelAndView modelAndView = new ModelAndView("tasks");
+		List<Task> tasks = findAll();
+		//System.out.println(tasks);
+		modelAndView.addObject("tasks", tasks);
+		return modelAndView;
+	}
 
 	public String create() {//Método que mostra a tela de criação de tarefas
 		return "task-form";
@@ -83,4 +93,5 @@ public class TaskService {
 		repository.save(task);
 		return "redirect:/task";
 	}
+
 }
