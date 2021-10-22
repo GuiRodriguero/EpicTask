@@ -13,7 +13,7 @@
 	</header>
 	
 	<section class="card form">
-		<h2>Cadastrar Usuário</h2>
+		<h2 th:text="#{user.create}"></h2>
 
 		<div sec:authorize="isAuthenticated()">
 			<form class="form-vertical" th:action="@{/user}" method="post" th:object="${user}" th:include="_template :: user"></form>
