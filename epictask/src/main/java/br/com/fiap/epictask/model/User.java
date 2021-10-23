@@ -40,7 +40,9 @@ public class User implements UserDetails{
 	
 	@Size(min = 8, message = "{user.password.size}")
 	private String password;
-	
+
+	private Integer points;
+
 	@NotBlank(message = "{user.github.blank}")
 	private String githubuser;
 
